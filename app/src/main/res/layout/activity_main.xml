@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.alumnedam.horari.MainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="40dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:text="@string/asignatura"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAsignatura"
+                android:textStyle="normal|bold"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAsignaturaAsignar"
+                android:textSize="30sp"
+                android:layout_weight="1.5"
+                android:layout_gravity="center"
+                android:text="e3dw4fvdg" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
+
+        <TextView
+            android:text="@string/hora_inici"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHoraIn"
+            android:textStyle="normal|bold"
+            android:textSize="24sp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHoraInAsignar"
+            android:textSize="30sp"
+            android:layout_weight="1.5"
+            android:layout_gravity="center"
+            android:text="e3dw4fvdg" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
+
+        <TextView
+                android:text="@string/hora_fin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHoraFin"
+                android:textStyle="normal|bold"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHoraFinAsignar"
+                android:textSize="30sp"
+                android:layout_weight="1.5"
+                android:layout_gravity="center"
+                android:text="e3dw4fvdg" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
+
+        <TextView
+                android:text="@string/clase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvClase"
+                android:textStyle="normal|bold"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvClaseAsignar"
+                android:textSize="30sp"
+                android:layout_weight="1.5"
+                android:layout_gravity="center"
+                android:text="e3dw4fvdg" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:text="@string/profesor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvProfesor"
+                android:textStyle="normal|bold"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvProfesorAsignar"
+                android:textSize="30sp"
+                android:layout_weight="1.5"
+                android:layout_gravity="center"
+                android:text="e3dw4fvdg" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:text="@string/grup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvGrup"
+                android:textStyle="normal|bold"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvGrupAsignar"
+                android:textSize="30sp"
+                android:layout_weight="1.5"
+                android:layout_gravity="center"
+                android:text="e3dw4fvdg" />
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="@string/dia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDia"
+                android:textStyle="normal|bold"
+                android:textSize="24sp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDiaAsignar"
+                android:textSize="30sp"
+                android:layout_weight="1.5"
+                android:layout_gravity="center"
+                android:text="e3dw4fvdg" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

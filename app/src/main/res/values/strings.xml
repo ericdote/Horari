@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Horario</string>
+    <string name="profesor">Profesor:</string>
+    <string name="clase">Clase:</string>
+    <string name="hora_fin">Hora Fin:</string>
+    <string name="hora_inici">Hora Inicio:</string>
+    <string name="asignatura">Asignatura:</string>
+    <string name="grup">Grupo:</string>
+    <string name="dia">Dia:</string>
+</resources>
