@@ -4,6 +4,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String idHorari, grup, codiAsignatura, horaInici, horaFi, diaSetmana, profesor, aula;
         //Creamos la BBDD
         SqlActivity sql = new SqlActivity(this, "Eric", null, 1);
         //Creamos el objeto BBDD
@@ -27,12 +32,21 @@ public class MainActivity extends AppCompatActivity {
         horaDelSistema = format.format(calendar.getTime());
         //Si la BBDD no esta vacia hace la SELECT
         if(db != null){
-            String[] args = new String[] {horaDelSistema, grupo};
-            Cursor c = db.rawQuery(" SELECT * FROM tablaHorarios WHERE ? BETWEEN horaInici AND horaFi AND grup = ?", args);
+            String[] args = new String[] {horaDelSistema};
+            Cursor c = db.rawQuery("SELECT * FROM tablaHorarios WHERE ? BETWEEN hora_inici AND hora_fi", args);
             if(c.moveToFirst()){
                 do{
-                    //TODO String http://www.sgoliver.net/blog/bases-de-datos-en-android-iii-consultarrecuperar-registros/
+                    idHorari = c.getString(0);
+                    grup = c.getString(1);
+                    codiAsignatura = c.getString(2);
+                    horaInici = c.getString(3);
+                    horaFi = c.getString(4);
+                    diaSetmana = c.getString(5);
+                    profesor = c.getString(6);
+                    aula = c.getString(7);
                 }while(c.moveToNext());
+                Toast.makeText(this, ""+idHorari+" "+grup+" "+codiAsignatura+" "+horaInici+" "+horaFi+" "+diaSetmana+" "+profesor
+                        +" "+aula, Toast.LENGTH_SHORT).show();
             }
         }
 
