@@ -21,8 +21,11 @@ public class HorariActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horari);
+        //Le llega el grupo de la anterior activity
         String intentGrup = getIntent().getStringExtra("grup");
+        //Variables que usamos
         String grup, codiAsignatura, horaInici, horaFi, diaSetmana, diaSetmanaHorari, profesor, aula;
+        //Asignamos el dia la semana actual gracias al metodo diaDeLaSemana
         diaSetmana = diaDeLaSemana();
         //Creamos la BBDD
         SqlActivity sql = new SqlActivity(this, "Eric", null, 1);
@@ -37,7 +40,7 @@ public class HorariActivity extends AppCompatActivity {
         //Si la BBDD no esta vacia hace la SELECT
         if (db != null) {
             String[] args = new String[]{horaDelSistema, intentGrup, diaSetmana};
-            Cursor c = db.rawQuery("SELECT * FROM tablaHorarios WHERE ? BETWEEN hora_inici AND hora_fi AND grup = ? AND dia_setmana = ?", args);
+            Cursor c = db.rawQuery("SELECT * FROM tablaHorarios WHERE ? BETWEEN hora_inici AND hora_fi AND grup = ? AND dia_setmana = ?", args); //TODO Falla aqui bestialmente
             if (c.moveToFirst()) {
                 do {
                     grup = c.getString(1);
@@ -121,11 +124,16 @@ public class HorariActivity extends AppCompatActivity {
         profe.setText(profesor);
     }
 
+    /**
+     * Metodo que tiene un array de strings, con los diferentes dias de la semana.
+     * Coge el dia de hoy y devuelve el dia de hoy en formato de String gracias al array.
+     * @return
+     */
     public String diaDeLaSemana(){
         String[] diesSetmana = new String[]{"Diumenge", "Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte"};
         Calendar cal = Calendar.getInstance();
         int dow = cal.get(Calendar.DAY_OF_WEEK);
-        String dia = diesSetmana[dow-5];
+        String dia = diesSetmana[dow-5]; //-5 Ya que es Sabado para probar con el martes.
         Toast.makeText(this, ""+dia, Toast.LENGTH_SHORT).show();
         return dia;
     }
