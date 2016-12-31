@@ -7,4 +7,8 @@
     <string name="asignatura">Asignatura:</string>
     <string name="grup">Grupo:</string>
     <string name="dia">Dia:</string>
+    <string-array name="cursos">
+        <item>A1</item>
+        <item>A2</item>
+    </string-array>
 </resources>
