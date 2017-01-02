@@ -26,7 +26,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvAsignatura"
                 android:textStyle="normal|bold"
-                android:textSize="24sp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:textColor="@android:color/black" />
@@ -35,7 +34,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvAsignaturaAsignar"
-                android:textSize="30sp"
                 android:layout_weight="1.5"
                 android:layout_gravity="center"
                 android:text="e3dw4fvdg" />
@@ -54,7 +52,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvHoraIn"
                 android:textStyle="normal|bold"
-                android:textSize="24sp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:textColor="@android:color/black" />
@@ -63,7 +60,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvHoraInAsignar"
-                android:textSize="30sp"
                 android:layout_weight="1.5"
                 android:layout_gravity="center"
                 android:text="e3dw4fvdg" />
@@ -81,7 +77,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvHoraFin"
                 android:textStyle="normal|bold"
-                android:textSize="24sp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:textColor="@android:color/black" />
@@ -90,7 +85,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvHoraFinAsignar"
-                android:textSize="30sp"
                 android:layout_weight="1.5"
                 android:layout_gravity="center"
                 android:text="e3dw4fvdg" />
@@ -108,7 +102,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvClase"
                 android:textStyle="normal|bold"
-                android:textSize="24sp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:textColor="@android:color/black" />
@@ -117,7 +110,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvClaseAsignar"
-                android:textSize="30sp"
                 android:layout_weight="1.5"
                 android:layout_gravity="center"
                 android:text="e3dw4fvdg" />
@@ -135,7 +127,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvProfesor"
                 android:textStyle="normal|bold"
-                android:textSize="24sp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:textColor="@android:color/black" />
@@ -144,7 +135,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvProfesorAsignar"
-                android:textSize="30sp"
                 android:layout_weight="1.5"
                 android:layout_gravity="center"
                 android:text="e3dw4fvdg" />
@@ -162,7 +152,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvGrup"
                 android:textStyle="normal|bold"
-                android:textSize="24sp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:textColor="@android:color/black" />
@@ -171,7 +160,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvGrupAsignar"
-                android:textSize="30sp"
                 android:layout_weight="1.5"
                 android:layout_gravity="center"
                 android:text="e3dw4fvdg" />
@@ -189,7 +177,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvDia"
                 android:textStyle="normal|bold"
-                android:textSize="24sp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:textColor="@android:color/black" />
@@ -198,7 +185,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvDiaAsignar"
-                android:textSize="30sp"
                 android:layout_weight="1.5"
                 android:layout_gravity="center"
                 android:text="e3dw4fvdg" />
