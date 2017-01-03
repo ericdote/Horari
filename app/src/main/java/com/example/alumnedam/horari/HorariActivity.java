@@ -133,7 +133,7 @@ public class HorariActivity extends AppCompatActivity {
         String[] diesSetmana = new String[]{"Diumenge", "Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte"};
         Calendar cal = Calendar.getInstance();
         int dow = cal.get(Calendar.DAY_OF_WEEK);
-        String dia = diesSetmana[dow-1];
+        String dia = diesSetmana[dow-1]; //-5 Ya que es Sabado para probar con el martes.
         Toast.makeText(this, ""+dia, Toast.LENGTH_SHORT).show();
         return dia;
     }
