@@ -7,6 +7,7 @@
     <string name="asignatura">Asignatura:</string>
     <string name="grup">Grupo:</string>
     <string name="dia">Dia:</string>
+    <string name="no_disponible">No disponible</string>
     <string-array name="cursos">
         <item>A1</item>
         <item>A2</item>

@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SharedPreferences settings = getSharedPreferences("PreferenciasHorari", 0);
-        if(settings.getString("grup", "") != ""){
+        if(settings.getBoolean("guardado", false) != false){
             String grup = settings.getString("grup", "A1");
             saltarMain(grup);
         }
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("nom", tvNom.getText().toString());
         editor.putString("grup", spin.getSelectedItem().toString());
-        editor.putBoolean("guardado", false);
+        editor.putBoolean("guardado", true);
         editor.commit();
     }
 

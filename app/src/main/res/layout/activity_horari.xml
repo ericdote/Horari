@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -9,188 +9,165 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.alumnedam.horari.MainActivity">
+    <TextView
+        android:text="@string/asignatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAsignatura"
+        android:textStyle="normal|bold"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black" />
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="40dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAsignaturaAsignar"
+        android:layout_gravity="center"
+        android:text="@string/no_disponible"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/tvAsignatura"
+        android:layout_marginStart="13dp" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="20dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvHoraInAsignar"
+        android:layout_gravity="center"
+        android:text="@string/no_disponible"
+        android:layout_alignBaseline="@+id/tvHoraIn"
+        android:layout_alignBottom="@+id/tvHoraIn"
+        android:layout_alignStart="@+id/tvAsignaturaAsignar" />
 
-            <TextView
-                android:text="@string/asignatura"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvAsignatura"
-                android:textStyle="normal|bold"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:textColor="@android:color/black" />
+    <TextView
+        android:text="@string/hora_fin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvHoraFin"
+        android:textStyle="normal|bold"
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvAsignaturaAsignar"
-                android:layout_weight="1.5"
-                android:layout_gravity="center"
-                android:text="e3dw4fvdg" />
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/tvHoraIn"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp" />
 
-        </TableRow>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvHoraFinAsignar"
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="20dp">
+        android:layout_gravity="center"
+        android:text="@string/no_disponible"
+        android:layout_alignBaseline="@+id/tvHoraFin"
+        android:layout_alignBottom="@+id/tvHoraFin"
+        android:layout_alignStart="@+id/tvHoraInAsignar" />
 
+    <TextView
+        android:text="@string/hora_inici"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvHoraIn"
+        android:textStyle="normal|bold"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/tvAsignatura"
+        android:layout_alignParentStart="true" />
 
-            <TextView
-                android:text="@string/hora_inici"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvHoraIn"
-                android:textStyle="normal|bold"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:textColor="@android:color/black" />
+    <TextView
+        android:text="@string/profesor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvProfesor"
+        android:textStyle="normal|bold"
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvHoraInAsignar"
-                android:layout_weight="1.5"
-                android:layout_gravity="center"
-                android:text="e3dw4fvdg" />
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/tvHoraFin"
+        android:layout_alignParentStart="true" />
 
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="20dp">
+    <TextView
+        android:text="@string/clase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvClase"
+        android:textStyle="normal|bold"
 
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/tvProfesor"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp" />
 
-            <TextView
-                android:text="@string/hora_fin"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvHoraFin"
-                android:textStyle="normal|bold"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:textColor="@android:color/black" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvClaseAsignar"
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvHoraFinAsignar"
-                android:layout_weight="1.5"
-                android:layout_gravity="center"
-                android:text="e3dw4fvdg" />
+        android:layout_gravity="center"
+        android:text="@string/no_disponible"
+        android:layout_alignBaseline="@+id/tvClase"
+        android:layout_alignBottom="@+id/tvClase"
+        android:layout_alignStart="@+id/tvHoraFinAsignar" />
 
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="20dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvProfesorAsignar"
 
+        android:layout_gravity="center"
+        android:text="@string/no_disponible"
+        android:layout_alignBaseline="@+id/tvProfesor"
+        android:layout_alignBottom="@+id/tvProfesor"
+        android:layout_alignStart="@+id/tvClaseAsignar" />
 
-            <TextView
-                android:text="@string/clase"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvClase"
-                android:textStyle="normal|bold"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:textColor="@android:color/black" />
+    <TextView
+        android:text="@string/grup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvGrup"
+        android:textStyle="normal|bold"
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvClaseAsignar"
-                android:layout_weight="1.5"
-                android:layout_gravity="center"
-                android:text="e3dw4fvdg" />
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/tvClase"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp" />
 
-        </TableRow>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvGrupAsignar"
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="20dp">
+        android:layout_gravity="center"
+        android:text="@string/no_disponible"
+        android:layout_alignBaseline="@+id/tvGrup"
+        android:layout_alignBottom="@+id/tvGrup"
+        android:layout_alignStart="@+id/tvClaseAsignar" />
 
-            <TextView
-                android:text="@string/profesor"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvProfesor"
-                android:textStyle="normal|bold"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:textColor="@android:color/black" />
+    <TextView
+        android:text="@string/dia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDia"
+        android:textStyle="normal|bold"
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvProfesorAsignar"
-                android:layout_weight="1.5"
-                android:layout_gravity="center"
-                android:text="e3dw4fvdg" />
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/tvGrup"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp" />
 
-        </TableRow>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDiaAsignar"
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="20dp">
+        android:layout_gravity="center"
+        android:text="@string/no_disponible"
+        android:layout_alignBaseline="@+id/tvDia"
+        android:layout_alignBottom="@+id/tvDia"
+        android:layout_alignStart="@+id/tvGrupAsignar" />
 
-            <TextView
-                android:text="@string/grup"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvGrup"
-                android:textStyle="normal|bold"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvGrupAsignar"
-                android:layout_weight="1.5"
-                android:layout_gravity="center"
-                android:text="e3dw4fvdg" />
-
-        </TableRow>
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:text="@string/dia"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvDia"
-                android:textStyle="normal|bold"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvDiaAsignar"
-                android:layout_weight="1.5"
-                android:layout_gravity="center"
-                android:text="e3dw4fvdg" />
-
-        </TableRow>
-
-    </TableLayout>
-
-</LinearLayout>
+</RelativeLayout>
