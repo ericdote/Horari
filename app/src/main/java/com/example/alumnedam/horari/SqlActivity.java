@@ -51,7 +51,7 @@ public class SqlActivity extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO tablaHorarios VALUES (3,'A1', '5', '17:00:00', '18:59:59', 'Dimarts', '5', '201') ");
         db.execSQL("INSERT INTO tablaHorarios VALUES (4,'Pati', 'Pati', '18:00:00', '18:19:59', 'Dimarts', null, 'Pati') ");
         db.execSQL("INSERT INTO tablaHorarios VALUES (5,'A1', '5', '18:20:00', '19:19:59', 'Dimarts', '5', '201') ");
-        db.execSQL("INSERT INTO tablaHorarios VALUES (6,'A1', '6', '19:20:00', '21:19:59', 'Dimarts', '6', '201') ");
+        db.execSQL("INSERT INTO tablaHorarios VALUES (6,'A1', '6', '19:20:00', '21:19:59', 'Dimarts', '3', '201') ");
         db.execSQL("INSERT INTO tablaHorarios VALUES (27,'A1', '6', '00:00:00', '15:59:59', 'Dimecres', '6', '201') ");
         db.execSQL("INSERT INTO tablaHorarios VALUES (7,'A1', '6', '16:00:00', '17:59:59', 'Dimecres', '6', '201') ");
         db.execSQL("INSERT INTO tablaHorarios VALUES (8,'A1', '4', '17:00:00', '18:59:59', 'Dimecres', '3', '201') ");
