@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -16,13 +18,40 @@ import java.util.GregorianCalendar;
 public class HorariActivity extends AppCompatActivity {
 
     private SQLiteDatabase db;
+    String intentGrup;
+    int cont;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horari);
         //Le llega el grupo de la anterior activity
-        String intentGrup = getIntent().getStringExtra("grup");
+        intentGrup = getIntent().getStringExtra("grup");
+        consulta(intentGrup);
+        Thread t = new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(5000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                consulta(intentGrup);
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+        t.start();
+
+
+    }
+
+    public void consulta(String intentGrup){
         //Variables que usamos
         String grup, codiAsignatura, horaInici, horaFi, diaSetmana, diaSetmanaHorari, profesor, aula;
         //Asignamos el dia la semana actual gracias al metodo diaDeLaSemana
@@ -40,7 +69,7 @@ public class HorariActivity extends AppCompatActivity {
         //Si la BBDD no esta vacia hace la SELECT
         if (db != null) {
             String[] args = new String[]{horaDelSistema, intentGrup, diaSetmana};
-            Cursor c = db.rawQuery("SELECT * FROM tablaHorarios WHERE ? BETWEEN hora_inici AND hora_fi AND grup = ? AND dia_setmana = ?", args); //TODO Falla aqui bestialmente
+            Cursor c = db.rawQuery("SELECT * FROM tablaHorarios WHERE ? BETWEEN hora_inici AND hora_fi AND grup = ? AND dia_setmana = ?", args);
             if (c.moveToFirst()) {
                 do {
                     grup = c.getString(1);
@@ -134,7 +163,6 @@ public class HorariActivity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
         int dow = cal.get(Calendar.DAY_OF_WEEK);
         String dia = diesSetmana[dow-1]; //-5 Ya que es Sabado para probar con el martes.
-        Toast.makeText(this, ""+dia, Toast.LENGTH_SHORT).show();
         return dia;
     }
 }
