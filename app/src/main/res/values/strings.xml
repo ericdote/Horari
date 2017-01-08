@@ -12,6 +12,20 @@
         <item>A1</item>
         <item>A2</item>
     </string-array>
+    <string-array name="fondo">
+        <item>Blau</item>
+        <item>Verd</item>
+        <item>Groc</item>
+        <item>Blanc</item>
+    </string-array>
+    <string-array name="font">
+        <item>Sant-Serif</item>
+        <item>Serif</item>
+        <item>Monospace</item>
+    </string-array>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="color_de_fons">Color de fons</string>
+    <string name="font_de_text">Font de text</string>
+    <string name="anar_al_horari">Anar al horari</string>
 </resources>

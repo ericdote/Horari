@@ -3,6 +3,8 @@ package com.example.alumnedam.horari;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -10,6 +12,7 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -18,15 +21,22 @@ import java.util.GregorianCalendar;
 public class HorariActivity extends AppCompatActivity {
 
     private SQLiteDatabase db;
-    String intentGrup;
-    int cont;
+    String intentGrup, fondo, font;
 
+    /**
+     * Metode onCreate on arriban els intents. Un cop arribats en crida a cambiarApariencia i a la consulta que s'ha de realitzar.
+     * Aquesta s'anira realitzant amb un thread cada X estona per refrescar l'informacio.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horari);
         //Le llega el grupo de la anterior activity
         intentGrup = getIntent().getStringExtra("grup");
+        font = getIntent().getStringExtra("font");
+        fondo = getIntent().getStringExtra("fondo");
+        cambiarApariencia();
         consulta(intentGrup);
         Thread t = new Thread() {
 
@@ -47,11 +57,14 @@ public class HorariActivity extends AppCompatActivity {
             }
         };
         t.start();
-
-
     }
 
-    public void consulta(String intentGrup){
+    /**
+     * Metode que li arriba el grup que pertany l'usuari i realitza una SELECT a la BBDD per trobar l'informacio relacionada amb la consulta.
+     * Un cop trobat tot s'envia l'informació a asignaTV.
+     * @param intentGrup
+     */
+    public void consulta(String intentGrup) {
         //Variables que usamos
         String grup, codiAsignatura, horaInici, horaFi, diaSetmana, diaSetmanaHorari, profesor, aula;
         //Asignamos el dia la semana actual gracias al metodo diaDeLaSemana
@@ -85,7 +98,6 @@ public class HorariActivity extends AppCompatActivity {
             }
         }
     }
-
 
     /**
      * Metodo que le llega por parametro la Id de una asignatura y se busca cual es su nombre.
@@ -156,13 +168,46 @@ public class HorariActivity extends AppCompatActivity {
     /**
      * Metodo que tiene un array de strings, con los diferentes dias de la semana.
      * Coge el dia de hoy y devuelve el dia de hoy en formato de String gracias al array.
+     *
      * @return
      */
-    public String diaDeLaSemana(){
+    public String diaDeLaSemana() {
         String[] diesSetmana = new String[]{"Diumenge", "Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte"};
         Calendar cal = Calendar.getInstance();
         int dow = cal.get(Calendar.DAY_OF_WEEK);
-        String dia = diesSetmana[dow-1]; //-5 Ya que es Sabado para probar con el martes.
+        String dia = diesSetmana[dow - 1]; //-5 Ya que es Sabado para probar con el martes.
         return dia;
+    }
+
+    /**
+     * Metode utilitzat per cambiar l'apariencia de l'activity, tant el fons com la font del text.
+     */
+    public void cambiarApariencia() {
+        TextView profe = (TextView) findViewById(R.id.tvProfesor);
+        switch (font) {
+            case "Blau":
+                findViewById(R.id.activity_horari).setBackgroundColor(Color.BLUE);
+                break;
+            case "Verd":
+                findViewById(R.id.activity_horari).setBackgroundColor(Color.GREEN);
+                break;
+            case "Groc":
+                findViewById(R.id.activity_horari).setBackgroundColor(Color.YELLOW);
+                break;
+            case "Blanc":
+                findViewById(R.id.activity_horari).setBackgroundColor(Color.WHITE);
+                break;
+        }
+        switch (fondo) {
+            case "Sant-Serif":
+                profe.setTypeface(Typeface.SANS_SERIF);
+                break;
+            case "Arial":
+                profe.setTypeface(Typeface.SERIF);
+                break;
+            case "Monospace":
+                profe.setTypeface(Typeface.MONOSPACE);
+                break;
+        }
     }
 }
